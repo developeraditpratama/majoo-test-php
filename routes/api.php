@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,17 @@ Route::group([
 
 ], function ($router) {
     Route::post('/login', [AuthController::class, 'login']);
+    Route::get('transaction/', [TransactionController::class, 'index']);
+    Route::get('transaction/laporan-all-merchant', [TransactionController::class, 'laporanAllMerchant']);
+    Route::get('transaction/laporan-all-outlet', [TransactionController::class, 'laporanAllOutlet']);
+});
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'transaction'
+
+], function ($router) {
+    Route::get('/', [TransactionController::class, 'index']);
+    Route::get('/laporan-all-merchant', [TransactionController::class, 'laporanAllMerchant']);
+    Route::get('/laporan-all-outlet', [TransactionController::class, 'laporanAllOutlet']);
 });
