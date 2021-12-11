@@ -10,14 +10,24 @@ use DateTime;
 class TransactionController extends Controller
 {
     public function getAuthUser() {
-        $user_id = auth()->guard('api')->user()->id;
-        if (isset($user_id)) {
-            return $user_id;
+        try {
+
+            $user_id = auth()->guard('api')->user()->id;
+
+        } catch (\Exception $e) {
+            echo "Maaf : ".$e->getMessage()." <br/>"."Harap Login Kembali dan mengganti bearer Token";
         }
-        return response()->json([
-            'code' => '408',
-            'message' => 'Token Timeout',
-        ]);
+
+        return $user_id;
+
+
+//        if ($user_id != null) {
+//            return $user_id;
+//        }
+//        return response()->json([
+//            'code' => '408',
+//            'message' => 'Token Timeout',
+//        ]);
     }
     /**
      * Display a listing of the resource.
@@ -101,71 +111,5 @@ class TransactionController extends Controller
             'message' => 'Data Berhasil Ditampilkan',
             'data' => $array,
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Transaction $transaction)
-    {
-        //
     }
 }

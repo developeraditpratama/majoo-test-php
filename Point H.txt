@@ -1,0 +1,7 @@
+Dokumen teknis Data Manipulation Language (DML)
+
+1. Login : SELECT `user_name`, `password` FROM users WHERE `user_name` = 'admin1` and WHERE `password` = 123456;
+
+2. Get Data Merchant : select `merchant_name`, SUM(bill_total) as total_bill from `transactions` inner join `merchants` on `transactions`.`merchant_id` = `merchants`.`id` where `merchant_id` = ? and date(`transactions`.`created_at`) = ? group by `transactions`.`merchant_id
+
+3. Get Data Outlet : select `merchant_name`, `outlet_name`, SUM(bill_total) as total_bill from `transactions` inner join `merchants` on `transactions`.`merchant_id` = `merchants`.`id` inner join `outlets` on `transactions`.`outlet_id` = `outlets`.`id` where `transactions`.`merchant_id` = ? and date(`transactions`.`created_at`) = ? group by `transactions`.`outlet_id`

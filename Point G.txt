@@ -1,0 +1,10 @@
+Dari test case pada point C dan point D, apakah struktur ERD yang dibentuk sudah optimal
+? berikan penjelasannya
+
+1. Belum Optimal 
+2. Penjelassan :
+	- Kurang nya pendefinisaian tentang user role 
+	- bisa dibuat table view pada table transaction untuk mempermudah pengambilan data untuk developer, tanpa harus query join 
+	- kurang nya indexing pada ERD tsb 
+	- attribute created_by dan updated_by bisa di merge kedalam table baru untuk logging  
+

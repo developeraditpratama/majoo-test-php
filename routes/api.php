@@ -26,13 +26,3 @@ Route::group([
     Route::get('transaction/laporan-all-merchant', [TransactionController::class, 'laporanAllMerchant']);
     Route::get('transaction/laporan-all-outlet', [TransactionController::class, 'laporanAllOutlet']);
 });
-
-Route::group([
-    'middleware' => 'api',
-    'prefix' => 'transaction'
-
-], function ($router) {
-    Route::get('/', [TransactionController::class, 'index']);
-    Route::get('/laporan-all-merchant', [TransactionController::class, 'laporanAllMerchant']);
-    Route::get('/laporan-all-outlet', [TransactionController::class, 'laporanAllOutlet']);
-});

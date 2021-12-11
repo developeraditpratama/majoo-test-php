@@ -1,0 +1,30 @@
+Terdapat variabel array dengan nilai [4, -7, -5, 3, 3.3, 9, 0, 10, 0.2]. Buatkan flowchart dan
+pseudocodeu ntuk melakukan logical sorting variabel tersebut baik secara ascending maupun
+descending (10 point)
+Hasil yang diharapkan ketika sorting secara ascending
+[-7, -5, 0, 0.2, 3, 3.3, 4, 9, 10]
+Hasil yang diharapkan ketika sorting secara descending
+[10, 9, 4, 3.3, 3, 0.2, 0, -5, -7]
+
+Pseudocode :
+
+Judul: Program sorting_bilangan
+
+Deskripsi, hasil : array
+perulangan : integer
+
+Implementasi 
+
+IF Asc
+	FOR (perulangan=0; perulangan < panjang variabel sortingan; perulangan++)
+	Tukar posisi index variabel dari yang terkecil ke yang terbesar
+ENDFOR
+
+Else Dsc
+	FOR (perulangan=0; perulangan < panjang variabel sortingan; perulangan++)
+	Tukar pisis index variabel dari yang terbsesar ke yang terkecil
+ENDFOR
+
+cek kembali hasil apakah sudah sesuai
+
+PRint hasil

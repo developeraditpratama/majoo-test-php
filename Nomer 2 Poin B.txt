@@ -1,0 +1,30 @@
+Buatkan flowchart dan pseudocodenya untuk menampilkan deret bilangan dengan inputan deret
+pertama, deret kedua dan nilai bilangan ke x (15 point)
+Contoh kasus pertama:
+Inputan deret pertama = 2
+Inputan deret kedua = 4
+Value x = 5
+Maka akan menghasilkan deret angka 2,4,6,8,10
+Contoh kasus kedua:
+Inputan deret pertama = 5
+Inputan deret kedua = 8
+Value x = 7
+Maka akan menghasilkan deret angka 5,8,11,14,17,20,23
+
+Pseudocode :
+
+Judul: Program deret_bilangan
+
+Deskripsi
+var deret_pertama, deret_kedua, x, selisih, hasil, perulangan : integer
+
+Implementasi 
+x = 5
+hasil = 0
+deret_pertama = 2
+deret_kedua = 4 
+selisih = deret_kedua - deret_pertama 
+
+FOR (perulangan=0; perulangan < x; perulangan++)
+         PRINT hasil =+ selisih
+ENDFOR

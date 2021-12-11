@@ -1,0 +1,10 @@
+Jika anda adalah reviewer dari task ini menurut anda apakah kesalahan yang telah saya
+perbuat?
+
+1. return nya bervariasi, cukup pilih salah satu return mau integer yang mewakili value, atau boolean, atau string.
+2. pindahkan whitelist IP nya ke variabel atau di file .env 
+3. tambahkan signature key untuk penambahan security 
+4, allow_private_ip harusnya hasil return dari pengecekan filter api 
+5. pattern bukan menjadi input emang variabel baku yang harusnya ada didalam function 
+6. cukup param ip saja yang ada untuk parameter filterIP 
+
